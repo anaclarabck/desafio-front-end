@@ -14,7 +14,6 @@ const fetchEmployees = () => {
     dispatch(getEmployees());
     try {
       const response = await axios.get(url);
-      console.log(response.data);
       dispatch(getEmployeesSuccess(response.data as FetchEmployeesResponse));
     } catch (err) {
       dispatch(getEmployeesFailure());
