@@ -1,9 +1,7 @@
+import { Home } from "./pages";
+
 function App() {
-  return (
-    <>
-      <h1>Vite + React</h1>
-    </>
-  );
+  return <Home />;
 }
 
 export default App;
