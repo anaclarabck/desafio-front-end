@@ -10,9 +10,7 @@ const TableRow = styled.tr<{ $iscollapsed?: string }>`
 
   align-items: center;
   box-shadow: ${(props) =>
-    props.$iscollapsed === "true"
-      ? "0px -1px 2px 0px #00000033"
-      : "0px 1px 2px 0px #00000033"};
+    props.$iscollapsed === "true" ? "none" : "0px 1px 2px 0px #00000033"};
   display: flex;
   height: 60px;
   justify-content: space-between;
@@ -47,19 +45,18 @@ const CollapsedContainer = styled.tr<{ $iscollapsed: string }>`
   flex-direction: column;
   height: ${(props) => (props.$iscollapsed === "true" ? "88px" : "0")};
   overflow: hidden;
-  transition: height 0.5s ease-out, padding 0.5s ease-out;
   padding: ${(props) =>
     props.$iscollapsed === "true" ? "20px 0 32px 0" : "0"};
-  // padding: 20px 0 32px 0;
+  transition: height 0.5s ease-out, padding 0.5s ease-out;
 `;
 
 const CollapsedWrapper = styled.td`
   display: flex;
   justify-content: space-between;
-  position: relative;
   padding-bottom: 1px;
-  margin-inline: 16px;
+  position: relative;
   margin-bottom: 16px;
+  margin-inline: 16px;
 
   &:after {
     content: "";

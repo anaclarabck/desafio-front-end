@@ -19,27 +19,28 @@ const TableHeaderRow = styled.tr`
     grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
   }
 
-  height: 49px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  box-shadow: 0px 1px 2px 0px #00000033;
+
+  display: flex;
+  height: 49px;
+  justify-content: space-between;
   padding: 0 16px;
-  // col-group: 1fr 2fr 1fr 1fr 1fr 1fr;
 `;
 
 const TableHeaderData = styled.th`
   ${baseHeading2Styles}
-  text-transform: uppercase;
-  text-align: left;
   color: ${colors.white};
+  text-align: left;
+  text-transform: uppercase;
 `;
 
 const TableHeaderCircle = styled.span`
   background-color: ${colors.white};
-  height: 8px;
-  width: 8px;
   border-radius: 50%;
   display: inline-block;
+  height: 8px;
+  width: 8px;
 `;
 
 export { TableHeader, TableHeaderRow, TableHeaderData, TableHeaderCircle };

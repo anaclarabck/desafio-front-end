@@ -13,9 +13,9 @@ const Section = styled.section`
 const HeadingAndSearchContainer = styled.div`
   @media (min-width: 376px) {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 32px;
     margin-top: 32px;
-    justify-content: space-between;
     width: 100%;
   }
 
@@ -33,10 +33,11 @@ const Heading = styled(Heading1)`
 `;
 
 const Table = styled.table`
-  border: 1px;
-  border-collapse: collapse;
-  // frame: void;
-  rules: rows;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  border-width: 1px;
+  overflow: hidden;
   width: 100%;
 `;
 
