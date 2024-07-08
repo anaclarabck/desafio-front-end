@@ -59,4 +59,3 @@ Será possível ver a aplicação no endereço http://localhost:5173/
 - [ ] readme
 - [ ] verificar acessibilidade
 - [ ] adicionar testes
-- [ ]
