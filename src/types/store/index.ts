@@ -1,5 +1,8 @@
 import rootReducer from "@/store/reducers";
 import { Employee } from "../employees";
+import store from "@/store";
+
+type AppDispatch = typeof store.dispatch;
 
 type EmployeeState = {
   fulfilled: boolean;
@@ -11,4 +14,4 @@ type EmployeeState = {
 
 type RootState = ReturnType<typeof rootReducer>;
 
-export type { EmployeeState, RootState };
+export type { AppDispatch, EmployeeState, RootState };
