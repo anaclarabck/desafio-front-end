@@ -22,7 +22,7 @@ function TableRow(props: TableRowProps) {
 
   return (
     <>
-      <S.TableRow collapsed={collapsed}>
+      <S.TableRow $iscollapsed={collapsed.toString()}>
         <S.TableCell>
           <S.TablePhoto src={employee.image} alt={`Foto de ${employee.name}`} />
         </S.TableCell>
@@ -39,22 +39,20 @@ function TableRow(props: TableRowProps) {
           </S.TableCell>
         )}
       </S.TableRow>
-      {collapsed && (
-        <S.CollapsedContainer>
-          <S.CollapsedWrapper>
-            <S.CollapsedTitle>Cargo</S.CollapsedTitle>
-            <S.CollapsedData>{employee.job}</S.CollapsedData>
-          </S.CollapsedWrapper>
-          <S.CollapsedWrapper>
-            <S.CollapsedTitle>Data de admissão</S.CollapsedTitle>
-            <S.CollapsedData>{admissionDate}</S.CollapsedData>
-          </S.CollapsedWrapper>
-          <S.CollapsedWrapper>
-            <S.CollapsedTitle>Telefone</S.CollapsedTitle>
-            <S.CollapsedData>{phoneNumber}</S.CollapsedData>
-          </S.CollapsedWrapper>
-        </S.CollapsedContainer>
-      )}
+      <S.CollapsedContainer $iscollapsed={collapsed.toString()}>
+        <S.CollapsedWrapper>
+          <S.CollapsedTitle>Cargo</S.CollapsedTitle>
+          <S.CollapsedData>{employee.job}</S.CollapsedData>
+        </S.CollapsedWrapper>
+        <S.CollapsedWrapper>
+          <S.CollapsedTitle>Data de admissão</S.CollapsedTitle>
+          <S.CollapsedData>{admissionDate}</S.CollapsedData>
+        </S.CollapsedWrapper>
+        <S.CollapsedWrapper>
+          <S.CollapsedTitle>Telefone</S.CollapsedTitle>
+          <S.CollapsedData>{phoneNumber}</S.CollapsedData>
+        </S.CollapsedWrapper>
+      </S.CollapsedContainer>
     </>
   );
 }
