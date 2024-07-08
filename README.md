@@ -1,6 +1,6 @@
 # Teste Técnico Front-end Be
 
-## Instalação e Configuração
+## Instalação e Execução
 
 ### Pré-requisitos
 
@@ -42,7 +42,7 @@ e
 npm run dev
 ```
 
-Será possível ver a aplicação no endereço http://localhost:5173/
+Será possível ver a aplicação no endereço http://localhost:5173/.
 
 ## Tecnologias Utilizadas
 
@@ -53,9 +53,4 @@ Será possível ver a aplicação no endereço http://localhost:5173/
 
 ## Próximos passos
 
-- [ ] adicionar pesquisa: cargo, nome, telefone
-- [ ] ajustar design: fotos, bordas
-- [ ] verificar responsividade
-- [ ] readme
-- [ ] verificar acessibilidade
 - [ ] adicionar testes
