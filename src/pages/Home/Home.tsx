@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import { fetchEmployees, filterEmployees } from "@/slices";
-import { Employee, RootState } from "@/types";
+import { Employee } from "@/types";
 import { Search, TableHeader, TableRow } from "./components";
 import * as S from "./styles";
 
 function Home() {
   const [search, setSearch] = useState<string>("");
-  const dispatch = useDispatch();
-  const { loading, hasErrors, filteredEmployees } = useSelector(
-    (state: RootState) => state.employees
+  const dispatch = useAppDispatch();
+  const { loading, hasErrors, filteredEmployees } = useAppSelector(
+    (state) => state.employees
   );
 
   useEffect(() => {
@@ -17,7 +17,11 @@ function Home() {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(filterEmployees(search));
+    const delayedSearch = setTimeout(() => {
+      dispatch(filterEmployees(search));
+    }, 500);
+
+    return () => clearTimeout(delayedSearch);
   }, [dispatch, search]);
 
   function handleSearch(value: string) {
