@@ -52,14 +52,12 @@ const TableBody = styled.tbody`
   border-radius: 0px 0px 5px 5px;
 `;
 
-const ColGroup = styled.colgroup`
-  @media (min-width: 640px) {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
-  }
+const WarningText = styled.p`
+  padding: 32px;
+  text-align: center;
+  color: ${colors.blackNeutral};
+  font-size: 16px;
 `;
-
-const Col = styled.col``;
 
 export {
   Main,
@@ -67,6 +65,5 @@ export {
   Heading,
   Table,
   TableBody,
-  ColGroup,
-  Col,
+  WarningText,
 };

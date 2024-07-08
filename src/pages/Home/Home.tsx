@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchEmployees, filterEmployees } from "@/slices";
 import { Employee, RootState } from "@/types";
-import { NavBar, Search, TableHeader, TableRow } from "./components";
+import { Search, TableHeader, TableRow } from "./components";
 import * as S from "./styles";
 
 function Home() {
@@ -25,21 +25,29 @@ function Home() {
   }
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <S.WarningText>Carregando...</S.WarningText>;
   }
 
   if (hasErrors) {
-    return <p>Algo deu errado</p>;
+    return (
+      <S.WarningText>
+        Algo deu errado. <br />
+        Tente novamente mais tarde.
+      </S.WarningText>
+    );
   }
 
   return (
-    <>
-      <NavBar />
-      <S.Main>
-        <S.HeadingAndSearchContainer>
-          <S.Heading>Funcionários</S.Heading>
-          <Search onChange={handleSearch} value={search} />
-        </S.HeadingAndSearchContainer>
+    <S.Main>
+      <S.HeadingAndSearchContainer>
+        <S.Heading>Funcionários</S.Heading>
+        <Search onChange={handleSearch} value={search} />
+      </S.HeadingAndSearchContainer>
+      {!filteredEmployees.length ? (
+        <S.WarningText>
+          Não foi possível encontrar funcionários com o termo <i>"{search}"</i>
+        </S.WarningText>
+      ) : (
         <S.Table>
           <TableHeader />
           <S.TableBody>
@@ -48,8 +56,8 @@ function Home() {
             ))}
           </S.TableBody>
         </S.Table>
-      </S.Main>
-    </>
+      )}
+    </S.Main>
   );
 }
 
