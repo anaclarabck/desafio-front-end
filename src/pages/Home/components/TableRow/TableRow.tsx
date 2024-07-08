@@ -23,9 +23,9 @@ function TableRow(props: TableRowProps) {
   return (
     <>
       <S.TableRow $iscollapsed={collapsed.toString()}>
-        <S.TableCell>
+        <S.TableCellPhoto>
           <S.TablePhoto src={employee.image} alt={`Foto de ${employee.name}`} />
-        </S.TableCell>
+        </S.TableCellPhoto>
         <S.TableCell>{employee.name}</S.TableCell>
         {width > mediaSize ? (
           <>

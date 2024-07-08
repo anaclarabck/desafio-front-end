@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { EmployeeState } from "@/types";
 
-const initialState = {
+const initialState: EmployeeState = {
   fulfilled: false,
   hasErrors: false,
   loading: false,
@@ -15,8 +16,9 @@ const employeesSlice = createSlice({
     getEmployees: (state) => {
       state.loading = true;
     },
-    getEmployeesSuccess: (state, { payload }) => {
-      state.employees = payload;
+    getEmployeesSuccess: (state, action) => {
+      state.employees = action.payload;
+      state.filteredEmployees = action.payload;
       state.loading = false;
       state.fulfilled = true;
       state.hasErrors = false;
@@ -26,8 +28,11 @@ const employeesSlice = createSlice({
       state.fulfilled = false;
       state.hasErrors = true;
     },
-    getFilteredEmployees: (state, { payload }) => {
-      state.filteredEmployees = payload;
+    getFilteredEmployees: (state, action) => {
+      state.filteredEmployees = action.payload;
+    },
+    setFilteredEmployees: (state, action) => {
+      state.filteredEmployees = action.payload;
     },
   },
 });
@@ -37,6 +42,7 @@ export const {
   getEmployeesSuccess,
   getEmployeesFailure,
   getFilteredEmployees,
+  setFilteredEmployees,
 } = employeesSlice.actions;
 
 export default employeesSlice.reducer;

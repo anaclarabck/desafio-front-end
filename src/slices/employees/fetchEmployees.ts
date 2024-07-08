@@ -5,12 +5,12 @@ import {
   getEmployeesSuccess,
   getEmployeesFailure,
 } from "./employees";
+import { Dispatch } from "@reduxjs/toolkit";
 
 const url = "http://localhost:3000/employees";
 
 const fetchEmployees = () => {
-  // TODO: verificar este tipo
-  return async (dispatch) => {
+  return async (dispatch: Dispatch) => {
     dispatch(getEmployees());
     try {
       const response = await axios.get(url);

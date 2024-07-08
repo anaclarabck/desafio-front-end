@@ -2,29 +2,30 @@ import { colors } from "@/constants";
 import { Heading1 } from "@/styles";
 import styled from "styled-components";
 
-const Section = styled.section`
-  @media (min-width: 376px) {
-    padding: 0 32px;
+const Main = styled.main`
+  @media (min-width: 640px) {
+    padding: 32px;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
-  padding: 0 20px;
+  padding: 20px;
 `;
 
 const HeadingAndSearchContainer = styled.div`
-  @media (min-width: 376px) {
+  @media (min-width: 640px) {
     display: flex;
-    margin-bottom: 32px;
-    margin-top: 32px;
     justify-content: space-between;
+    margin-bottom: 32px;
+    margin-top: 0;
     width: 100%;
   }
 
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 20px 0;
 `;
 
 const Heading = styled(Heading1)`
-  @media (min-width: 376px) {
+  @media (min-width: 640px) {
     margin-bottom: auto;
     margin-top: auto;
   }
@@ -33,10 +34,16 @@ const Heading = styled(Heading1)`
 `;
 
 const Table = styled.table`
-  border: 1px;
-  border-collapse: collapse;
-  // frame: void;
-  rules: rows;
+  @media (min-width: 640px) {
+    box-shadow: 0px 1px 2px 0px #00000033;
+    border-radius: 8px 8px 0 0;
+  }
+
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  border-width: 1px;
+  overflow: hidden;
   width: 100%;
 `;
 
@@ -45,4 +52,18 @@ const TableBody = styled.tbody`
   border-radius: 0px 0px 5px 5px;
 `;
 
-export { Section, HeadingAndSearchContainer, Heading, Table, TableBody };
+const WarningText = styled.p`
+  padding: 32px;
+  text-align: center;
+  color: ${colors.blackNeutral};
+  font-size: 16px;
+`;
+
+export {
+  Main,
+  HeadingAndSearchContainer,
+  Heading,
+  Table,
+  TableBody,
+  WarningText,
+};

@@ -1,8 +1,9 @@
-import { employeesSlice } from "@/slices";
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, Reducer } from "@reduxjs/toolkit";
+import { RootState } from "@/types";
+import rootReducer from "./reducers";
 
-const store = configureStore({
-  reducer: { employees: employeesSlice },
+const store = configureStore<RootState>({
+  reducer: rootReducer as Reducer<RootState>,
 });
 
 export default store;

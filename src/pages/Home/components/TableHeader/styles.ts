@@ -14,32 +14,35 @@ const TableHeader = styled.thead`
 `;
 
 const TableHeaderRow = styled.tr`
-  @media (min-width: 376px) {
-    display: grid;
+  @media (min-width: 640px) {
     grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
   }
 
-  height: 49px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  box-shadow: 0px 1px 2px 0px #00000033;
+  display: grid;
+  grid-template-columns: 50px 1fr 20px;
+  height: 49px;
   padding: 0 16px;
-  // col-group: 1fr 2fr 1fr 1fr 1fr 1fr;
 `;
 
 const TableHeaderData = styled.th`
+  @media (min-width: 640px) {
+    text-align: left;
+  }
+
   ${baseHeading2Styles}
-  text-transform: uppercase;
-  text-align: left;
   color: ${colors.white};
+  text-align: center;
+  text-transform: uppercase;
 `;
 
 const TableHeaderCircle = styled.span`
   background-color: ${colors.white};
-  height: 8px;
-  width: 8px;
   border-radius: 50%;
   display: inline-block;
+  height: 8px;
+  width: 8px;
 `;
 
 export { TableHeader, TableHeaderRow, TableHeaderData, TableHeaderCircle };

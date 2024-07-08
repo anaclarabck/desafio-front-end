@@ -2,13 +2,13 @@ import { colors } from "@/constants";
 import { baseHeading3Styles } from "@/styles";
 import styled from "styled-components";
 
-const InputArea = styled.div`
+const InputArea = styled.label`
   align-items: center;
   display: flex;
   position: relative;
   width: 100%;
 
-  @media (min-width: 376px) {
+  @media (min-width: 640px) {
     width: 286px;
   }
 `;
@@ -25,12 +25,12 @@ const Input = styled.input`
   padding: 10px 40px 10px 10px;
   width: 100%;
 
-  @media (min-width: 376px) {
+  @media (min-width: 640px) {
     min-width: 258px;
   }
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.span`
   align-items: center;
   display: flex;
   height: 100%;
