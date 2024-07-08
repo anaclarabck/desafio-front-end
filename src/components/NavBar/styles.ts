@@ -1,7 +1,7 @@
-import { colors } from "@/constants";
 import styled from "styled-components";
+import { colors } from "@/constants";
 
-const HeaderDiv = styled.div`
+const NavBar = styled.nav`
   @media (min-width: 640px) {
     padding-left: 32px;
   }
@@ -14,4 +14,4 @@ const HeaderDiv = styled.div`
   padding-left: 20px;
 `;
 
-export { HeaderDiv };
+export { NavBar };

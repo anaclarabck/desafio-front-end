@@ -2,7 +2,7 @@ import { colors } from "@/constants";
 import { baseHeading3Styles } from "@/styles";
 import styled from "styled-components";
 
-const InputArea = styled.div`
+const InputArea = styled.label`
   align-items: center;
   display: flex;
   position: relative;
@@ -30,7 +30,7 @@ const Input = styled.input`
   }
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.span`
   align-items: center;
   display: flex;
   height: 100%;

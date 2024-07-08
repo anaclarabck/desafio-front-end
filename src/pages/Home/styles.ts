@@ -2,7 +2,7 @@ import { colors } from "@/constants";
 import { Heading1 } from "@/styles";
 import styled from "styled-components";
 
-const Section = styled.section`
+const Main = styled.main`
   @media (min-width: 640px) {
     padding: 32px;
     max-width: 900px;
@@ -62,7 +62,7 @@ const ColGroup = styled.colgroup`
 const Col = styled.col``;
 
 export {
-  Section,
+  Main,
   HeadingAndSearchContainer,
   Heading,
   Table,

@@ -1,12 +1,12 @@
 import { Logo } from "@/assets";
 import * as S from "./styles";
 
-function Header() {
+function NavBar() {
   return (
-    <S.HeaderDiv>
+    <S.NavBar>
       <Logo />
-    </S.HeaderDiv>
+    </S.NavBar>
   );
 }
 
-export default Header;
+export default NavBar;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchEmployees, filterEmployees } from "@/slices";
 import { Employee, RootState } from "@/types";
-import { Header, Search, TableHeader, TableRow } from "./components";
+import { NavBar, Search, TableHeader, TableRow } from "./components";
 import * as S from "./styles";
 
 function Home() {
@@ -34,8 +34,8 @@ function Home() {
 
   return (
     <>
-      <Header />
-      <S.Section>
+      <NavBar />
+      <S.Main>
         <S.HeadingAndSearchContainer>
           <S.Heading>Funcionários</S.Heading>
           <Search onChange={handleSearch} value={search} />
@@ -48,7 +48,7 @@ function Home() {
             ))}
           </S.TableBody>
         </S.Table>
-      </S.Section>
+      </S.Main>
     </>
   );
 }
