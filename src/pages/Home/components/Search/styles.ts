@@ -8,7 +8,7 @@ const InputArea = styled.div`
   position: relative;
   width: 100%;
 
-  @media (min-width: 376px) {
+  @media (min-width: 640px) {
     width: 286px;
   }
 `;
@@ -25,7 +25,7 @@ const Input = styled.input`
   padding: 10px 40px 10px 10px;
   width: 100%;
 
-  @media (min-width: 376px) {
+  @media (min-width: 640px) {
     min-width: 258px;
   }
 `;

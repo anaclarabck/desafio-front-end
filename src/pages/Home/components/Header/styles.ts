@@ -2,7 +2,7 @@ import { colors } from "@/constants";
 import styled from "styled-components";
 
 const HeaderDiv = styled.div`
-  @media (min-width: 376px) {
+  @media (min-width: 640px) {
     padding-left: 32px;
   }
 
