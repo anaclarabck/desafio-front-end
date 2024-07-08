@@ -21,14 +21,12 @@ export const filterEmployees = (filter: string) => {
     const { employees } = getState().employees;
 
     if (filter.length === 0) {
-      console.log("0");
       return dispatch(setFilteredEmployees(employees));
     }
     const filteredEmployees = filterEmployeesByNameJobPhone({
       filter,
       employees,
     });
-    console.log({ filteredEmployees });
     return dispatch(setFilteredEmployees(filteredEmployees));
   };
 };
