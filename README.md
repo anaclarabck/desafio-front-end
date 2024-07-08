@@ -1,66 +1,62 @@
 # Teste Técnico Front-end Be
 
-Este é um repositório para Testes Técnicos em Front-end da Be. Ele é destinado a pessoas que participam de nossos processos seletivos.
+## Instalação e Configuração
 
-Se você chegou até aqui por meio de um formulário de Teste Técnico, siga em frente. Caso contrário, acompanhe a Be no [Linkedin](https://br.linkedin.com/company/bemobiletech), [Instagram](https://www.instagram.com/bemobile.tech/), [Facebook](https://www.facebook.com/bemobile.tech) ou na nossa comunidade no [Telegram](https://t.me/be_tech_community). Divulgamos novos processos seletivos por lá.
+### Pré-requisitos
 
-## Desafio
+- [Node.js](https://nodejs.org/)
+- [json-server](https://github.com/typicode/json-server)
 
-O Teste Técnico para Front-End da Be consiste em construir a visualização de uma tabela com dados que virão de uma API simulada, em json-server.
+### Instalação
 
-### Mockup
+1. Clone este repositório em sua máquina local:
 
-Este é o [projeto em Figma](https://www.figma.com/file/yw6th52zE9bubewc6ayTg5/Teste-T%C3%A9cnico-Front-End-Be.?type=design&node-id=1%3A4&mode=dev&t=vVxs9eyKybrYmq4Z-1) para você se orientar. Nele, você encontrará estilos, visualização desktop e mobile e outros padrões que deverá seguir.
+```sh
+git clone git@github.com:anaclarabck/desafio-front-end.git
+```
 
-### Requisitos Gerais
+ou
 
-Deve-se utilizar React.js ou Vanilla JS (JavaScript puro) para construir o projeto.
+```sh
+git clone https://github.com/anaclarabck/desafio-front-end.git
+```
 
-É permitido utilizar libs externas, mas recomenda-se que seja o mínimo possível.
+2. Navegue até a pasta desafio-front-end e instale as dependências:
 
-A visualização deve ser responsiva.
+```sh
+cd desafio-front-end
+npm install
+```
 
-A tabela deve conter as seguintes colunas:
+### Execução
 
-- imagem (thumb do/a usuário/a);
-- nome;
-- cargo
-- data de admissão;
-- telefone.
+Para iniciar o aplicativo em modo de desenvolvimento, execute:
 
-Também deve ser possível realizar pesquisa na tabela por meio de um input. O input de pesquisa deve permitir filtrar dados por cargo, nome e telefone.
+```sh
+npx json-server db.json
+```
 
-Datas e telefones devem ser formatadas no front-end e não na API.
+e
 
-Tenha instaladas em sua máquina as ferramentas [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/) (ou outro gerenciador de pacotes de sua preferência) para poder trabalhar no projeto.
+```sh
+npm run dev
+```
 
-### Acesso aos dados da API simulada
+Será possível ver a aplicação no endereço http://localhost:5173/
 
-Para ter acesso aos dados que alimentarão o projeto, faça o seguinte:
+## Tecnologias Utilizadas
 
-1. caso você não tenha, instale o pacote [json-server](https://github.com/typicode/json-server);
-2. clone este repositório do GitHub em sua máquina: [https://github.com/BeMobile/desafio-front-end](https://github.com/BeMobile/desafio-front-end);
-3. entre na pasta do projeto, em sua máquina, e, por meio da linha de comando, execute o comando `json-server --watch db.json`, para consumir a API simulada;
-4. inicie a estrutura e o desenvolvimento do projeto.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [styled-components](https://styled-components.com/)
+- [@reduxjs/toolkit](https://redux-toolkit.js.org/)
 
-É necessário deixar o json-server rodando no terminal para que os dados sejam visualizados no projeto.
+## Próximos passos
 
-Caso você tenha problemas com o json-server, tente rodá-lo com `npx json-server db.json` ou
-com `yarn json-server <path>/db.json`, em que `<path>` é o caminho completo até o diretório em que o arquivo db.json está localizado. Se mesmo assim não funcionar, busque ajuda na web.
-
-### Critérios de Avaliação
-
-Em ordem de relevância, avaliaremos:
-
-1. lógica de programação;
-2. organização (do código e dos arquivos);
-3. CSS do projeto;
-4. README, que deve conter, pelo menos, as seguintes informações: sobre o projeto, pré-requisitos e instruções para rodar a aplicação.
-
-É um diferencial na avaliação o uso de TypeScript.
-
-### Envio da Solução
-
-O projeto deverá ser hospedado em um repositório no seu GitHub. O link do repositório deverá ser fornecido por meio do formulário de Teste Técnico encaminhado ao seu e-mail. Não serão aceitos links de projetos enviados por outros meios.
-
-Demais instruções e regras serão instruídas nos formulários e nas comunicações do processo seletivo do qual você está participando.
+- [ ] adicionar pesquisa: cargo, nome, telefone
+- [ ] ajustar design: fotos, bordas
+- [ ] verificar responsividade
+- [ ] readme
+- [ ] verificar acessibilidade
+- [ ] adicionar testes
+- [ ]
