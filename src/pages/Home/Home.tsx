@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchEmployees } from "@/slices";
-import { Employee } from "@/types";
+import { fetchEmployees, filterEmployees } from "@/slices";
+import { Employee, RootState } from "@/types";
 import { Header, Search, TableHeader, TableRow } from "./components";
 import * as S from "./styles";
 
 function Home() {
   const [search, setSearch] = useState<string>("");
   const dispatch = useDispatch();
-  const { employees, loading, hasErrors } = useSelector(
-    (state) => state.employees
+  const { loading, hasErrors, filteredEmployees } = useSelector(
+    (state: RootState) => state.employees
   );
 
   useEffect(() => {
     dispatch(fetchEmployees());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(filterEmployees(search));
+  }, [dispatch, search]);
 
   function handleSearch(value: string) {
     setSearch(value);
@@ -39,7 +43,7 @@ function Home() {
         <S.Table>
           <TableHeader />
           <S.TableBody>
-            {employees.map((employee: Employee) => (
+            {filteredEmployees.map((employee: Employee) => (
               <TableRow employee={employee} key={employee.name} />
             ))}
           </S.TableBody>
